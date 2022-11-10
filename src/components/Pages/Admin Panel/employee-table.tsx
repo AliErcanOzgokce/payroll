@@ -67,7 +67,7 @@ class EmployeeTable extends Component<any, any> {
                 </Button>
               </Table.Cell>
               <Table.Cell>
-                <Link to="/Encode-Solidity-Bootcamp/update-salary">
+                <Link to="/payroll/update-salary">
                   <Button floated="right" icon labelPosition="left" color="yellow" size="small">
                     <Icon name="edit" />
                     Update Salary
@@ -75,7 +75,7 @@ class EmployeeTable extends Component<any, any> {
                 </Link>
               </Table.Cell>
               <Table.Cell>
-                <Link to="/Encode-Solidity-Bootcamp/give-bonus">
+                <Link to="/payroll/give-bonus">
                   <Button floated="right" icon labelPosition="left" color="green" size="small">
                     <Icon name="money" />
                     Give Bonus
@@ -108,7 +108,7 @@ class EmployeeTable extends Component<any, any> {
         <Table.Footer fullWidth>
           <Table.Row>
             <Table.HeaderCell colSpan="8">
-              <Link to="/Encode-Solidity-Bootcamp/add-employee">
+              <Link to="/payroll/add-employee">
                 <Button floated="right" icon labelPosition="left" primary size="big">
                   <Icon name="user" /> Add An Employee
                 </Button>
