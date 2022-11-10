@@ -85,7 +85,7 @@ function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar-container">
-          <Link to="/Encode-Solidity-Bootcamp/" style={{ textDecoration: "none", color: "black" }}>
+          <Link to="/payroll/" style={{ textDecoration: "none", color: "black" }}>
             <h1>N&E</h1>
           </Link>
           <div className="navbar-link">
@@ -94,13 +94,13 @@ function Navbar() {
             </a>
             {ownerMatch === false ? null : (
               // Redirect to the Admin Panel Page
-              <Link to="Encode-Solidity-Bootcamp/admin-panel" style={{ textDecoration: "none", color: "black" }}>
+              <Link to="payroll/admin-panel" style={{ textDecoration: "none", color: "black" }}>
                 Admin Panel
               </Link>
             )}
             {employeeMatch === false ? null : (
               // Redirect to the Employee Page
-              <Link to="Encode-Solidity-Bootcamp/employee-panel" style={{ textDecoration: "none", color: "black" }}>
+              <Link to="payroll/employee-panel" style={{ textDecoration: "none", color: "black" }}>
                 Employee Panel
               </Link>
             )}

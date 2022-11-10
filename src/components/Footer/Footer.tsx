@@ -12,10 +12,7 @@ function Footer() {
         {/* <div className="footer-container "> */}
         <div className="footer-link w-1/2 flex justify-around pb-10">
           {/* <div className="buttons-container"> */}
-          <a
-            target="_blank"
-            href="https://github.com/Nikos-Salichos/Encode-Solidity-Bootcamp-Weekend-Projects"
-          >
+          <a target="_blank" href="https://github.com/Nikos-Salichos/Encode-Solidity-Bootcamp-Weekend-Projects">
             <Button as="div" labelPosition="right">
               <Button size="huge" color="black">
                 <Icon name="star" />
@@ -26,10 +23,7 @@ function Footer() {
               </Label>
             </Button>
           </a>
-          <a
-            target="_blank"
-            href="https://github.com/Nikos-Salichos/Encode-Solidity-Bootcamp-Weekend-Projects/fork"
-          >
+          <a target="_blank" href="https://github.com/Nikos-Salichos/Encode-Solidity-Bootcamp-Weekend-Projects/fork">
             <Button as="div" labelPosition="right">
               <Button size="huge" color="black">
                 <Icon name="fork" />
