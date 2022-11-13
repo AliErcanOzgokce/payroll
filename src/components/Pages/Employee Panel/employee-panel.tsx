@@ -25,10 +25,18 @@ function EmployeePanel() {
     const accounts = await provider.listAccounts();
     const account = accounts[0];
 
-    const payroll = new ethers.Contract(payrollAddress, payrollContract.abi, signer);
+    const payroll = new ethers.Contract(
+      payrollAddress,
+      payrollContract.abi,
+      signer
+    );
     const payrollTokenAddress = await payroll.paymentToken();
 
-    const payrollToken = new ethers.Contract(payrollTokenAddress, payrollTokenContract.abi, signer);
+    const payrollToken = new ethers.Contract(
+      payrollTokenAddress,
+      payrollTokenContract.abi,
+      signer
+    );
 
     const isEmployee = await payroll.isEmployee(account);
 
@@ -71,7 +79,11 @@ function EmployeePanel() {
     const accounts = await provider.listAccounts();
     const account = accounts[0];
 
-    const payroll = new ethers.Contract(payrollAddress, payrollContract.abi, signer);
+    const payroll = new ethers.Contract(
+      payrollAddress,
+      payrollContract.abi,
+      signer
+    );
 
     const isEmployee = await payroll.isEmployee(account);
 
@@ -88,24 +100,36 @@ function EmployeePanel() {
     <>
       <div className="employee-panel">
         <div className="section">
-          <div className="container-default">
-            <div className="header-container">
-              <h1>Employee Panel</h1>
-              <div className="buttons-container">
-                <Button size="big" onClick={readTheContract}>
+          <div className="container-default bg-blue-600/20 rounded-3xl">
+            <div className="header-container  bg-green-600 rounded-t-3xl pl-5">
+              <h1 className=" text-white">Employee Panel</h1>
+              <div className="buttons-container pr-5">
+                <Button size="medium" onClick={readTheContract}>
                   Read The Contract
                 </Button>
-                <Button size="big" secondary onClick={claim}>
+                <Button size="medium" secondary onClick={claim}>
                   Claim
                 </Button>
               </div>
             </div>
-            <h2 style={{ textAlign: "left" }}>Personal Information</h2>
-            <div className="inner-container">
+            <h2 style={{ textAlign: "left" }} className="pl-5">
+              Personal Information
+            </h2>
+            <div className="inner-container pl-5">
               <div className="inner-container-left">
-                <div className="inner-container-left-header" style={{ display: "flex" }}>
-                  <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png" style={{ maxWidth: "200px" }} alt="employee" />
-                  <div className="inner-container-right" style={{ padding: "30px" }}>
+                <div
+                  className="inner-container-left-header"
+                  style={{ display: "flex" }}
+                >
+                  <img
+                    src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+                    style={{ maxWidth: "200px" }}
+                    alt="employee"
+                  />
+                  <div
+                    className="inner-container-right"
+                    style={{ padding: "30px" }}
+                  >
                     <h3>Employee Name</h3>
                     <p>Shalu</p>
                     <h3>Employee Phone Number</h3>
@@ -115,8 +139,10 @@ function EmployeePanel() {
               </div>
             </div>
             <br />
-            <h2 style={{ textAlign: "left" }}>Employee Information</h2>
-            <div className="inner-container">
+            <h2 style={{ textAlign: "left" }} className="pl-5">
+              Employee Information
+            </h2>
+            <div className="inner-container p-5">
               <div className="inner-container-left">
                 <div className="inner-container-left-header">
                   <h3>Employee Account Address</h3>
@@ -138,7 +164,9 @@ function EmployeePanel() {
                 </div>
               </div>
             </div>
-            <StakeTable />
+            <div className="text-base p-5">
+              <StakeTable />
+            </div>
           </div>
         </div>
       </div>

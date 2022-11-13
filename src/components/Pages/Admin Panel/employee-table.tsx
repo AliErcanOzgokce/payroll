@@ -22,17 +22,29 @@ class EmployeeTable extends Component<any, any> {
     provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
 
-    const payroll = new ethers.Contract(payrollAddress, payrollContract.abi, signer);
+    const payroll = new ethers.Contract(
+      payrollAddress,
+      payrollContract.abi,
+      signer
+    );
 
     const payrollTokenAddress = await payroll.paymentToken();
-    const payrollToken = new ethers.Contract(payrollTokenAddress, payrollTokenContract.abi, signer);
+    const payrollToken = new ethers.Contract(
+      payrollTokenAddress,
+      payrollTokenContract.abi,
+      signer
+    );
 
     const employeesLength = await payroll.totalEmployees();
     const employees = await payroll.getEmployees();
 
     const symbol = await payrollToken.symbol();
 
-    this.setState({ employees: employees, employeesLength: employeesLength.toString(), tokenSymbol: " " + symbol });
+    this.setState({
+      employees: employees,
+      employeesLength: employeesLength.toString(),
+      tokenSymbol: " " + symbol,
+    });
   }
 
   async removeEmployee(address: string) {
@@ -40,7 +52,11 @@ class EmployeeTable extends Component<any, any> {
     provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
 
-    const payroll = new ethers.Contract(payrollAddress, payrollContract.abi, signer);
+    const payroll = new ethers.Contract(
+      payrollAddress,
+      payrollContract.abi,
+      signer
+    );
 
     const removeEmployee = await payroll.removeEmployee(address);
 
@@ -57,18 +73,33 @@ class EmployeeTable extends Component<any, any> {
             <>
               <Table.Cell>{index}</Table.Cell>
               <Table.Cell>{employee[0].toString()}</Table.Cell>
-              <Table.Cell>{employee[1].toString() + this.state.tokenSymbol} </Table.Cell>
+              <Table.Cell>
+                {employee[1].toString() + this.state.tokenSymbol}{" "}
+              </Table.Cell>
               <Table.Cell>{unixTime == 0 ? 0 : date.toUTCString()}</Table.Cell>
               <Table.Cell>{employee[3].toString()}</Table.Cell>
               <Table.Cell>
-                <Button floated="right" icon labelPosition="left" color="red" size="small" onClick={() => this.removeEmployee(employee[0].toString())}>
+                <Button
+                  floated="right"
+                  icon
+                  labelPosition="left"
+                  color="red"
+                  size="small"
+                  onClick={() => this.removeEmployee(employee[0].toString())}
+                >
                   <Icon name="trash" />
                   Remove Employee
                 </Button>
               </Table.Cell>
               <Table.Cell>
                 <Link to="/payroll/update-salary">
-                  <Button floated="right" icon labelPosition="left" color="yellow" size="small">
+                  <Button
+                    floated="right"
+                    icon
+                    labelPosition="left"
+                    color="yellow"
+                    size="small"
+                  >
                     <Icon name="edit" />
                     Update Salary
                   </Button>
@@ -76,7 +107,13 @@ class EmployeeTable extends Component<any, any> {
               </Table.Cell>
               <Table.Cell>
                 <Link to="/payroll/give-bonus">
-                  <Button floated="right" icon labelPosition="left" color="green" size="small">
+                  <Button
+                    floated="right"
+                    icon
+                    labelPosition="left"
+                    color="green"
+                    size="small"
+                  >
                     <Icon name="money" />
                     Give Bonus
                   </Button>
@@ -91,7 +128,7 @@ class EmployeeTable extends Component<any, any> {
 
   render() {
     return (
-      <Table celled compact definition style={{ minWidth: "1330px" }}>
+      <Table celled compact definition style={{ minWidth: "1100px" }}>
         <Table.Header fullWidth>
           <Table.Row>
             <Table.HeaderCell>ID</Table.HeaderCell>
@@ -109,7 +146,13 @@ class EmployeeTable extends Component<any, any> {
           <Table.Row>
             <Table.HeaderCell colSpan="8">
               <Link to="/payroll/add-employee">
-                <Button floated="right" icon labelPosition="left" primary size="big">
+                <Button
+                  floated="right"
+                  icon
+                  labelPosition="left"
+                  primary
+                  size="big"
+                >
                   <Icon name="user" /> Add An Employee
                 </Button>
               </Link>
