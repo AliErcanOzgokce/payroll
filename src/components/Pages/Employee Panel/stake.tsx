@@ -21,10 +21,18 @@ function Stake() {
     const accounts = await provider.listAccounts();
     const account = accounts[0];
 
-    const payroll = new ethers.Contract(payrollAddress, payrollContract.abi, signer);
+    const payroll = new ethers.Contract(
+      payrollAddress,
+      payrollContract.abi,
+      signer
+    );
     const payrollTokenAddress = await payroll.paymentToken();
 
-    const payrollToken = new ethers.Contract(payrollTokenAddress, payrollTokenContract.abi, signer);
+    const payrollToken = new ethers.Contract(
+      payrollTokenAddress,
+      payrollTokenContract.abi,
+      signer
+    );
 
     const isEmployee = await payroll.isEmployee(account);
 
@@ -43,18 +51,27 @@ function Stake() {
   return (
     <>
       <div className="section">
-        <div className="container-default">
-          <div className="inner-container-left">
-            <div className="header-container">
-              <h1>Stake</h1>
-            </div>
-            <div className="input-container">
+        <div className=" bg-green-600 rounded-3xl p-10">
+          <div className="">
+            <h1 className="text-white text-5xl">STAKE</h1>
+
+            <div className="text-left text-white">
               <h2>Stake Amount</h2>
               <Input type="text" placeholder="Stake Amount" fluid>
-                <input type="text" onChange={handleAmountChange} value={amount} />
+                <input
+                  type="text"
+                  onChange={handleAmountChange}
+                  value={amount}
+                />
               </Input>
-              <div className="buttons-container-single">
-                <Button icon labelPosition="left" color="green" size="big" onClick={stake}>
+              <div className="p-5 text-center">
+                <Button
+                  icon
+                  labelPosition="left"
+                  color="twitter"
+                  size="big"
+                  onClick={stake}
+                >
                   <Icon name="money" /> Stake
                 </Button>
               </div>

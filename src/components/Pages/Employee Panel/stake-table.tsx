@@ -21,7 +21,11 @@ class StakeTable extends React.Component<any, any> {
     const signer = provider.getSigner();
     console.log("Account:", signer.getAddress());
 
-    const payroll = new ethers.Contract(payrollAddress, payrollContract.abi, signer);
+    const payroll = new ethers.Contract(
+      payrollAddress,
+      payrollContract.abi,
+      signer
+    );
 
     const accounts = await provider.listAccounts();
     const account = accounts[0];
@@ -42,7 +46,11 @@ class StakeTable extends React.Component<any, any> {
     const signer = provider.getSigner();
     console.log("Account:", signer.getAddress());
 
-    const payroll = new ethers.Contract(payrollAddress, payrollContract.abi, signer);
+    const payroll = new ethers.Contract(
+      payrollAddress,
+      payrollContract.abi,
+      signer
+    );
 
     const unstake = await payroll.unstake(id);
 
@@ -68,12 +76,28 @@ class StakeTable extends React.Component<any, any> {
               <Table.Cell>{stake[4].toString()}</Table.Cell>
               <Table.Cell>
                 {claimDate < new Date() ? (
-                  <Button fluid floated="left" icon labelPosition="left" color="green" size="small" onClick={() => this.unstake(stake[0].toString())}>
+                  <Button
+                    fluid
+                    floated="left"
+                    icon
+                    labelPosition="left"
+                    color="green"
+                    size="small"
+                    onClick={() => this.unstake(stake[0].toString())}
+                  >
                     <Icon name="money bill alternate outline" />
                     Claim Your Interest
                   </Button>
                 ) : (
-                  <Button fluid floated="left" icon labelPosition="left" color="red" size="small" onClick={() => this.unstake(stake[0].toString())}>
+                  <Button
+                    fluid
+                    floated="left"
+                    icon
+                    labelPosition="left"
+                    color="red"
+                    size="small"
+                    onClick={() => this.unstake(stake[0].toString())}
+                  >
                     <Icon name="trash" />
                     Unstake
                   </Button>
@@ -88,7 +112,7 @@ class StakeTable extends React.Component<any, any> {
 
   render() {
     return (
-      <Table celled compact definition style={{ minWidth: "1330px" }}>
+      <Table celled compact definition style={{ minWidth: "1100px" }}>
         <Table.Header fullWidth>
           <Table.Row>
             <Table.HeaderCell>Id</Table.HeaderCell>
@@ -104,7 +128,13 @@ class StakeTable extends React.Component<any, any> {
           <Table.Row>
             <Table.HeaderCell colSpan="6">
               <Link to="/payroll/stake">
-                <Button floated="right" icon labelPosition="left" color="green" size="big">
+                <Button
+                  floated="right"
+                  icon
+                  labelPosition="left"
+                  color="green"
+                  size="big"
+                >
                   <Icon name="money" /> Stake
                 </Button>
               </Link>
