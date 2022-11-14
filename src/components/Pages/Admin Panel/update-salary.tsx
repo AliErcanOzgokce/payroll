@@ -40,7 +40,7 @@ function UpdateEmployeeSalary() {
   return (
     <>
       <div className="section">
-        <div className="bg-green-600 rounded-3xl p-10">
+        <div className="bg-gray-900 rounded-2xl p-10">
           <div>
             <h1 className="text-white text-5xl">Update Employee Salary</h1>
             <div className="text-left">

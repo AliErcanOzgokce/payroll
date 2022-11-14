@@ -100,14 +100,14 @@ function EmployeePanel() {
     <>
       <div className="employee-panel">
         <div className="section">
-          <div className="container-default bg-blue-600/20 rounded-3xl">
-            <div className="header-container  bg-green-600 rounded-t-3xl pl-5">
-              <h1 className=" text-white">Employee Panel</h1>
-              <div className="buttons-container pr-5">
-                <Button size="medium" onClick={readTheContract}>
+          <div className="container-default bg-slate-50 rounded-3xl">
+            <div className="header-container bg-gray-900 rounded-t-2xl">
+              <h1 className=" text-white pl-5" style={{ margin: "0px" }}>Employee Panel</h1>
+              <div className="buttons-container">
+                <Button size="big" onClick={readTheContract}>
                   Read The Contract
                 </Button>
-                <Button size="medium" secondary onClick={claim}>
+                <Button size="big" color="green" onClick={claim}>
                   Claim
                 </Button>
               </div>

@@ -98,17 +98,17 @@ function AdminPanel() {
     <>
       <div className="admin-panel ">
         <div className="section">
-          <div className="container-default bg-blue-600/20 rounded-3xl">
-            <div className="header-container bg-green-600 rounded-t-3xl ">
-              <h1 className=" text-white pl-5">Admin Panel</h1>
-              <div className="buttons-container pr-5">
-                <Button size="medium" onClick={readTheContract}>
+          <div className="container-default bg-slate-50 rounded-2xl">
+            <div className="header-container bg-gray-900 rounded-t-2xl ">
+              <h1 className=" text-white pl-5" style={{ margin: "0px" }}>Admin Panel</h1>
+              <div className="buttons-container">
+                <Button size="big" onClick={readTheContract}>
                   Read The Contract
                 </Button>
                 <Button
                   icon
                   labelPosition="left"
-                  size="medium"
+                  size="big"
                   color="red"
                   onClick={closeCompany}
                 >
